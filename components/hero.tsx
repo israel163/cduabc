@@ -3,45 +3,48 @@
 import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
+const basePath = process.env.NODE_ENV === "production" ? "/cduabc" : ""
+
+const withBasePath = (path: string) => `${basePath}${path}`
+
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const basePath = process.env.NODE_ENV === "production" ? "/cduabc" : ""
 
   const slides = [
     {
       title: "Facultad de Ciencias",
       subtitle: "Ensenada Baja California",
-      image: `${basePath}20170313_100529-1-scaled.jpg`,
+      image: withBasePath("/20170313_100529-1-scaled.jpg"),
       color: "from-blue-100 to-yellow-900",
     },
     {
       title: "Facultad de Ciencias",
       subtitle: "Ensenada Baja California",
-      image: `${basePath}20170313_100529-1-scaled.jpg`,
+      image: withBasePath("/20170313_100529-1-scaled.jpg"),
       color: "from-blue-100 to-yellow-900",
     },
     {
       title: "Facultad de Ciencias",
       subtitle: "Ensenada Baja California",
-      image: `${basePath}20170313_100529-1-scaled.jpg`,
+      image: withBasePath("/20170313_100529-1-scaled.jpg"),
       color: "from-blue-100 to-yellow-900",
     },
     // {
     //   title: "Licenciatura en Ciencia de Datos",
     //   subtitle: "Forma parte de la próxima generación de científicos de datos",
-    //   image: "/data-science-students-working.jpg",
+    //   image: withBasePath("/data-science-students-working.jpg"),
     //   color: "from-blue-600 to-blue-900",
     // },
     // {
     //   title: "Investigación de Vanguardia",
     //   subtitle: "Colabora con nuestros investigadores en proyectos innovadores",
-    //   image: "/research-laboratory.png",
+    //   image: withBasePath("/research-laboratory.png"),
     //   color: "from-indigo-600 to-indigo-900",
     // },
     // {
     //   title: "Oportunidades Profesionales",
     //   subtitle: "Acceso a internados y oportunidades en la industria",
-    //   image: "/students-networking.jpg",
+    //   image: withBasePath("/students-networking.jpg"),
     //   color: "from-purple-600 to-purple-900",
     // },
   ]
@@ -50,8 +53,9 @@ export default function Hero() {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
     }, 5000)
+
     return () => clearInterval(timer)
-  }, [])
+  }, [slides.length])
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length)
@@ -69,16 +73,23 @@ export default function Hero() {
           className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
         >
-          <img src={slide.image || "/cduabc/placeholder.svg"} alt={slide.title} className="w-full h-full object-cover" />
-          <div className={`absolute inset-0 bg-gradient-to-r ${slide.color} opacity-50`}></div>
+          <img
+            src={slide.image || withBasePath("/placeholder.svg")}
+            alt={slide.title}
+            className="w-full h-full object-cover"
+          />
+          <div className={`absolute inset-0 bg-gradient-to-r ${slide.color} opacity-50`} />
           <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 text-balance">{slide.title}</h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-2xl text-balance">{slide.subtitle}</p>
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 text-balance">
+              {slide.title}
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 max-w-2xl text-balance">
+              {slide.subtitle}
+            </p>
           </div>
         </div>
       ))}
 
-      {/* Navigation buttons */}
       <button
         onClick={prevSlide}
         className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 text-white p-2 rounded-lg transition-all"
@@ -86,6 +97,7 @@ export default function Hero() {
       >
         <ChevronLeft size={24} />
       </button>
+
       <button
         onClick={nextSlide}
         className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 text-white p-2 rounded-lg transition-all"
@@ -94,7 +106,6 @@ export default function Hero() {
         <ChevronRight size={24} />
       </button>
 
-      {/* Indicators */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
         {slides.map((_, index) => (
           <button

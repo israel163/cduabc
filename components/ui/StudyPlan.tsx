@@ -1,6 +1,10 @@
 import Link from "next/link"
 import { ArrowRight, BookOpen, Code, Brain } from "lucide-react"
 
+const basePath = process.env.NODE_ENV === "production" ? "/cduabc" : ""
+
+const withBasePath = (path: string) => `${basePath}${path}`
+
 export default function StudyPlan() {
     return (
         <section className="py-16 bg-gray-50">
@@ -11,17 +15,15 @@ export default function StudyPlan() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    {/* Image Side */}
                     <div className="relative rounded-2xl overflow-hidden shadow-xl group">
                         <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
                         <img
-                            src="/data-science-students-working.jpg"
+                            src={withBasePath("/data-science-students-working.jpg")}
                             alt="Plan de Estudios"
                             className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
                         />
                     </div>
 
-                    {/* Content Side */}
                     <div className="space-y-8">
                         <div className="space-y-6">
                             <div className="flex gap-4 items-start">
