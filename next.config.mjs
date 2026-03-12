@@ -1,11 +1,12 @@
-/** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  output: "export",
   images: {
     unoptimized: true,
   },
-}
+  basePath: isProd ? "/cduabc" : "",
+  assetPrefix: isProd ? "/cduabc/" : "",
+};
 
-export default nextConfig
+export default nextConfig;
