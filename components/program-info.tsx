@@ -14,8 +14,8 @@ export default function ProgramInfo() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <img
-              src={withBasePath("/diverse-students-classroom.png")}
-              alt="Aula de clase"
+              src="/cduabc/inicioa.jpg"
+              alt="Estudiantes2026"
               className="rounded-lg shadow-lg"
             />
           </div>

@@ -18,9 +18,9 @@ export default function StudyPlan() {
                     <div className="relative rounded-2xl overflow-hidden shadow-xl group">
                         <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300 z-10"></div>
                         <img
-                            src={withBasePath("/data-science-students-working.jpg")}
+                            src="/cduabc/iniciob.jpg"
                             alt="Plan de Estudios"
-                            className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            className="w-full h-140 object-cover transform group-hover:scale-105 transition-transform duration-500"
                         />
                     </div>
 
