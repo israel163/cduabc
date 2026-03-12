@@ -7,6 +7,10 @@ import "./globals.css"
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
+const basePath = process.env.NODE_ENV === "production" ? "/cduabc" : ""
+
+const withBasePath = (path: string) => `${basePath}${path}`
+
 export const metadata: Metadata = {
   title: "LCD-FC",
   description:
@@ -15,19 +19,18 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/apple-icon.png",
+        url: withBasePath("/apple-icon.png"),
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/apple-icon.png",
+        url: withBasePath("/apple-icon.png"),
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/",
-        type: "image/svg+xml",
+        url: withBasePath("/favicon.ico"),
       },
     ],
-    apple: "/apple-icon.png",
+    apple: withBasePath("/apple-icon.png"),
   },
 }
 
@@ -38,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className={`font-sans antialiased`}>
+      <body className="font-sans antialiased">
         {children}
         <Analytics />
       </body>

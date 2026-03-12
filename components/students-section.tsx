@@ -115,7 +115,9 @@ export default function StudentsSection() {
                 ))}
               </ul>
               <Link
-                href="#"
+                href="https://admisiones.uabc.mx/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block mt-8 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
               >
                 Solicitar Admisión

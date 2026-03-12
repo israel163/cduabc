@@ -67,7 +67,7 @@ export default function AcademicsList() {
       photo: withBasePath("/placeholder.svg?key=prof4"),
       bio: "Ciencia de Datos y Aprendizaje Automático",
       profiles: {
-        googleScholar: "https://scholar.google.com/citations?user=_o-o254AAAAJ&hl=es&oi=sra",
+        googleScholar: "https://scholar.google.com/citations?user=tMkjwR4AAAAJ&hl=es&oi=ao",
         researchGate: "https://researchgate.net",
         orcid: "https://orcid.org",
         linkedin: "https://linkedin.com",
@@ -97,10 +97,10 @@ export default function AcademicsList() {
       photo: withBasePath("/placeholder.svg?key=prof3"),
       bio: "Matemáticas discretas",
       profiles: {
-        googleScholar: "https://scholar.google.com/citations?user=XOnxqzYAAAAJ&hl=es",
+        googleScholar: "./",
         github: "https://github.com",
         twitter: "https://twitter.com",
-        orcid: "https://orcid.org/0000-0002-3037-5386",
+        orcid: "https://orcid.org/",
       },
     },
     {
@@ -112,10 +112,10 @@ export default function AcademicsList() {
       photo: withBasePath("/placeholder.svg?key=prof3"),
       bio: "Matemáticas discretas",
       profiles: {
-        googleScholar: "https://scholar.google.com/citations?user=XOnxqzYAAAAJ&hl=es",
+        googleScholar: "https://scholar.google.com/citations?user=1XroR6UAAAAJ&hl=es&oi=ao",
         github: "https://github.com",
         twitter: "https://twitter.com",
-        orcid: "https://orcid.org/0000-0002-3037-5386",
+        orcid: "https://orcid.org/",
       },
     },
   ]

@@ -25,10 +25,10 @@ export default function Map() {
             <strong>Dirección:</strong> Facultad de Ciencias, Carretera Transpeninsular 3917, Playitas, 22860 Ensenada, B.C.
           </p>
           <p className="text-foreground/70">
-            <strong>Teléfono:</strong> +52 (646) 174-4560
+            <strong>Teléfono:</strong> +52 (646)  152 8211
           </p>
           <p className="text-foreground/70">
-            <strong>Email:</strong> cienciadedatos@uabc.edu.umx
+            <strong>Email:</strong> lcd.fc@uabc.edu.mx
           </p>
         </div>
       </div>
