@@ -4,19 +4,22 @@ import { useState } from "react"
 import { Mail, ExternalLink, Search } from "lucide-react"
 import Link from "next/link"
 
+const basePath = process.env.NODE_ENV === "production" ? "/cduabc" : ""
+
+const withBasePath = (path: string) => `${basePath}${path}`
+
 export default function AcademicsList() {
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedDept, setSelectedDept] = useState("all")
 
-  // Datos de los académicos
   const academics = [
     {
       id: 1,
       name: "Dr. Luis Pellegrin",
       title: "Profesor Investigador Titular",
       department: "Ciencia de Datos",
-      email: "luis.pellegrini@uabc.edu.mx",
-      photo: "/cduabc/placeholder.svg?key=prof1",
+      email: "luis.pellegrin@uabc.edu.mx",
+      photo: withBasePath("/placeholder.svg?key=prof1"),
       bio: "Especialista en Vision y Lenguaje",
       profiles: {
         googleScholar: "https://scholar.google.com/citations?user=mRWayw0AAAAJ&hl=es&oi=ao",
@@ -31,7 +34,7 @@ export default function AcademicsList() {
       title: "Profesor Titular",
       department: "Ciencia de Datos",
       email: "rcasillas@uabc.edu.mx",
-      photo: "/cduabc/placeholder.svg?key=prof2",
+      photo: withBasePath("/placeholder.svg?key=prof2"),
       bio: "Interacción humano computadora",
       profiles: {
         googleScholar: "https://scholar.google.com/citations?user=pUiGvyUAAAAJ&hl=es&oi=ao",
@@ -42,11 +45,11 @@ export default function AcademicsList() {
     },
     {
       id: 3,
-      name: "Dr. José  I. Paez Ornelas",
+      name: "Dr. I. Paez Ornelas",
       title: "Profesor Investigador Titular",
       department: "Ciencia de Datos",
       email: "jose.paez.ornelas@uabc.edu.mx",
-      photo: "/placeholder.svg?key=prof3",
+      photo: withBasePath("/placeholder.svg?key=prof3"),
       bio: "Informática de materiales",
       profiles: {
         googleScholar: "https://scholar.google.com/citations?user=XOnxqzYAAAAJ&hl=es",
@@ -59,9 +62,9 @@ export default function AcademicsList() {
       id: 4,
       name: "Dr. Irvin Hussein López-Nava",
       title: "Profesor Investigador CICESE",
-      department: "Ciencias Computacionales",
+      department: "Machine Learning",
       email: "irvin.lopez.navas@uabc.edu.mx",
-      photo: "/cduabc/placeholder.svg?key=prof4",
+      photo: withBasePath("/placeholder.svg?key=prof4"),
       bio: "Ciencia de Datos y Aprendizaje Automático",
       profiles: {
         googleScholar: "https://scholar.google.com/citations?user=_o-o254AAAAJ&hl=es&oi=sra",
@@ -69,7 +72,6 @@ export default function AcademicsList() {
         orcid: "https://orcid.org",
         linkedin: "https://linkedin.com",
       },
-
     },
     {
       id: 5,
@@ -77,7 +79,7 @@ export default function AcademicsList() {
       title: "Profesora Investigadora",
       department: "Análisis de Datos",
       email: "X@uabc.edu.mx",
-      photo: "/cduabc/placeholder.svg?key=prof4",
+      photo: withBasePath("/placeholder.svg?key=prof4"),
       bio: "Investigadora en minería de datos y análisis de redes complejas.",
       profiles: {
         googleScholar: "https://scholar.google.com/citations?user=_o-o254AAAAJ&hl=es&oi=sra",
@@ -85,15 +87,14 @@ export default function AcademicsList() {
         orcid: "https://orcid.org",
         linkedin: "https://linkedin.com",
       },
-
     },
     {
       id: 6,
       name: "Dr. Julio Duran",
       title: "Profesor de Asignatura",
       department: "Ciencia de Datos",
-      email: "julio.duran@uabc.edu.mx",
-      photo: "/cduabc/placeholder.svg?key=prof3",
+      email: "duran.julio@uabc.edu.mx",
+      photo: withBasePath("/placeholder.svg?key=prof3"),
       bio: "Matemáticas discretas",
       profiles: {
         googleScholar: "https://scholar.google.com/citations?user=XOnxqzYAAAAJ&hl=es",
@@ -108,7 +109,7 @@ export default function AcademicsList() {
       title: "Profesor de Asignatura",
       department: "Matemáticas",
       email: "julio.duran@uabc.edu.mx",
-      photo: "/cduabc/placeholder.svg?key=prof3",
+      photo: withBasePath("/placeholder.svg?key=prof3"),
       bio: "Matemáticas discretas",
       profiles: {
         googleScholar: "https://scholar.google.com/citations?user=XOnxqzYAAAAJ&hl=es",
@@ -132,7 +133,6 @@ export default function AcademicsList() {
   return (
     <section className="py-20 bg-muted/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-foreground mb-4">Nuestro Equipo Académico</h1>
           <p className="text-xl text-foreground/70 mb-4">
@@ -141,10 +141,8 @@ export default function AcademicsList() {
           <div className="h-1 w-20 bg-primary mx-auto"></div>
         </div>
 
-        {/* Search and Filter */}
         <div className="bg-white dark:bg-slate-900 rounded-lg p-6 mb-8 shadow-sm">
           <div className="grid md:grid-cols-2 gap-4 mb-4">
-            {/* Search */}
             <div className="relative">
               <Search className="absolute left-3 top-3 text-foreground/50" size={20} />
               <input
@@ -156,7 +154,6 @@ export default function AcademicsList() {
               />
             </div>
 
-            {/* Department Filter */}
             <select
               value={selectedDept}
               onChange={(e) => setSelectedDept(e.target.value)}
@@ -173,7 +170,6 @@ export default function AcademicsList() {
           <p className="text-sm text-foreground/60">Se encontraron {filteredAcademics.length} académico(s)</p>
         </div>
 
-        {/* Academics Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {filteredAcademics.length > 0 ? (
             filteredAcademics.map((academic) => (
@@ -181,25 +177,21 @@ export default function AcademicsList() {
                 key={academic.id}
                 className="bg-white dark:bg-slate-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
               >
-                {/* Photo */}
                 <div className="h-64 overflow-hidden bg-muted">
                   <img
-                    src={academic.photo || "/placeholder.svg"}
+                    src={academic.photo || withBasePath("/placeholder.svg")}
                     alt={academic.name}
                     className="w-full h-full object-cover"
                   />
                 </div>
 
-                {/* Content */}
                 <div className="p-6">
                   <h3 className="text-2xl font-bold text-foreground mb-1">{academic.name}</h3>
                   <p className="text-primary font-semibold text-sm mb-1">{academic.title}</p>
                   <p className="text-sm text-foreground/60 mb-3">{academic.department}</p>
 
-                  {/* Bio */}
                   <p className="text-foreground/70 text-sm leading-relaxed mb-4">{academic.bio}</p>
 
-                  {/* Email */}
                   <div className="flex items-center gap-2 mb-4 pb-4 border-b border-border">
                     <Mail size={18} className="text-primary" />
                     <a href={`mailto:${academic.email}`} className="text-primary hover:underline text-sm break-all">
@@ -207,7 +199,6 @@ export default function AcademicsList() {
                     </a>
                   </div>
 
-                  {/* Scientific Profiles */}
                   <div className="space-y-2">
                     <p className="text-sm font-semibold text-foreground mb-2">Perfiles Científicos</p>
                     <div className="flex flex-wrap gap-2">
