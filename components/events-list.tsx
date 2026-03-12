@@ -4,6 +4,10 @@ import { useState } from "react"
 import { Calendar, MapPin, Users, Clock, ArrowRight, Filter } from "lucide-react"
 import Link from "next/link"
 
+const basePath = process.env.NODE_ENV === "production" ? "/cduabc" : ""
+
+const withBasePath = (path: string) => `${basePath}${path}`
+
 export default function EventsList() {
   const [selectedCategory, setSelectedCategory] = useState("all")
 
@@ -18,7 +22,7 @@ export default function EventsList() {
       speaker: "Dr. Carlos Mendez",
       category: "seminario",
       capacity: 150,
-      image: "/placeholder.svg?key=event1",
+      image: withBasePath("/placeholder.svg?key=event1"),
     },
     {
       id: 2,
@@ -30,7 +34,7 @@ export default function EventsList() {
       speaker: "Ing. Juan Carlos López",
       category: "taller",
       capacity: 50,
-      image: "/placeholder.svg?key=event2",
+      image: withBasePath("/placeholder.svg?key=event2"),
     },
     {
       id: 3,
@@ -42,7 +46,7 @@ export default function EventsList() {
       speaker: "Equipo de Especialistas",
       category: "conferencia",
       capacity: 300,
-      image: "/placeholder.svg?key=event3",
+      image: withBasePath("/placeholder.svg?key=event3"),
     },
     {
       id: 4,
@@ -54,7 +58,7 @@ export default function EventsList() {
       speaker: "Emprendedores del Sector",
       category: "mesa-redonda",
       capacity: 100,
-      image: "/placeholder.svg?key=event4",
+      image: withBasePath("/placeholder.svg?key=event4"),
     },
     {
       id: 5,
@@ -66,7 +70,7 @@ export default function EventsList() {
       speaker: "Dra. Sofia Rodriguez",
       category: "taller",
       capacity: 60,
-      image: "/placeholder.svg?key=event5",
+      image: withBasePath("/placeholder.svg?key=event5"),
     },
     {
       id: 6,
@@ -78,7 +82,7 @@ export default function EventsList() {
       speaker: "Equipo de Recursos Humanos",
       category: "networking",
       capacity: 200,
-      image: "/placeholder.svg?key=event6",
+      image: withBasePath("/placeholder.svg?key=event6"),
     },
   ]
 
@@ -106,7 +110,6 @@ export default function EventsList() {
   return (
     <section className="py-20 bg-muted/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-foreground mb-4">Eventos y Actividades</h1>
           <p className="text-xl text-foreground/70 mb-4">
@@ -115,17 +118,15 @@ export default function EventsList() {
           <div className="h-1 w-20 bg-primary mx-auto"></div>
         </div>
 
-        {/* Filter Buttons */}
         <div className="flex flex-wrap gap-2 justify-center mb-12">
           {categories.map((category) => (
             <button
               key={category.value}
               onClick={() => setSelectedCategory(category.value)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                selectedCategory === category.value
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === category.value
                   ? "bg-primary text-primary-foreground"
                   : "bg-white dark:bg-slate-900 text-foreground border border-border hover:border-primary"
-              }`}
+                }`}
             >
               <div className="flex items-center gap-2">
                 <Filter size={14} />
@@ -135,7 +136,6 @@ export default function EventsList() {
           ))}
         </div>
 
-        {/* Events Grid */}
         <div className="space-y-6">
           {filteredEvents.length > 0 ? (
             filteredEvents.map((event) => (
@@ -143,19 +143,16 @@ export default function EventsList() {
                 key={event.id}
                 className="bg-white dark:bg-slate-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col md:flex-row"
               >
-                {/* Image */}
                 <div className="md:w-64 h-64 md:h-auto overflow-hidden flex-shrink-0">
                   <img
-                    src={event.image || "/placeholder.svg"}
+                    src={event.image || withBasePath("/placeholder.svg")}
                     alt={event.title}
                     className="w-full h-full object-cover"
                   />
                 </div>
 
-                {/* Content */}
                 <div className="flex-1 p-6 flex flex-col justify-between">
                   <div>
-                    {/* Category Badge */}
                     <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-3">
                       {categories.find((c) => c.value === event.category)?.label}
                     </span>
@@ -163,7 +160,6 @@ export default function EventsList() {
                     <h3 className="text-2xl font-bold text-foreground mb-2">{event.title}</h3>
                     <p className="text-foreground/70 mb-4 leading-relaxed">{event.description}</p>
 
-                    {/* Event Details */}
                     <div className="grid md:grid-cols-2 gap-3 mb-4">
                       <div className="flex items-center gap-2 text-foreground/70 text-sm">
                         <Calendar size={18} className="text-primary" />
@@ -183,13 +179,11 @@ export default function EventsList() {
                       </div>
                     </div>
 
-                    {/* Speaker */}
                     <div className="text-sm text-foreground/60">
                       <strong>Conferencista:</strong> {event.speaker}
                     </div>
                   </div>
 
-                  {/* Action Button */}
                   <div className="flex gap-3 mt-6 pt-6 border-t border-border">
                     <Link
                       href="#"
@@ -215,7 +209,6 @@ export default function EventsList() {
           )}
         </div>
 
-        {/* Newsletter Subscription */}
         <div className="mt-16 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg p-8 text-center border border-border">
           <h2 className="text-2xl font-bold text-foreground mb-2">Mantente Informado</h2>
           <p className="text-foreground/70 mb-6">
