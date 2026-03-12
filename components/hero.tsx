@@ -5,24 +5,25 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const basePath = process.env.NODE_ENV === "production" ? "/cduabc" : ""
 
   const slides = [
     {
       title: "Facultad de Ciencias",
       subtitle: "Ensenada Baja California",
-      image: "/20170313_100529-1-scaled.jpg",
+      image: `${basePath}20170313_100529-1-scaled.jpg`,
       color: "from-blue-100 to-yellow-900",
     },
     {
       title: "Facultad de Ciencias",
       subtitle: "Ensenada Baja California",
-      image: "/20170313_100529-1-scaled.jpg",
+      image: `${basePath}20170313_100529-1-scaled.jpg`,
       color: "from-blue-100 to-yellow-900",
     },
     {
       title: "Facultad de Ciencias",
       subtitle: "Ensenada Baja California",
-      image: "/20170313_100529-1-scaled.jpg",
+      image: `${basePath}20170313_100529-1-scaled.jpg`,
       color: "from-blue-100 to-yellow-900",
     },
     // {
@@ -68,7 +69,7 @@ export default function Hero() {
           className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
         >
-          <img src={slide.image || "/placeholder.svg"} alt={slide.title} className="w-full h-full object-cover" />
+          <img src={slide.image || "/cduabc/placeholder.svg"} alt={slide.title} className="w-full h-full object-cover" />
           <div className={`absolute inset-0 bg-gradient-to-r ${slide.color} opacity-50`}></div>
           <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 text-balance">{slide.title}</h1>

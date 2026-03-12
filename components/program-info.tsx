@@ -9,7 +9,7 @@ export default function ProgramInfo() {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <img src="/diverse-students-classroom.png" alt="Aula de clase" className="rounded-lg shadow-lg" />
+            <img src="/cduabc/diverse-students-classroom.png" alt="Aula de clase" className="rounded-lg shadow-lg" />
           </div>
 
           <div className="space-y-6">

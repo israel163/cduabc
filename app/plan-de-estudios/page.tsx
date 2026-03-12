@@ -1,10 +1,14 @@
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { FileText, Download } from "lucide-react"
 import Link from "next/link"
+
+const basePath = process.env.NODE_ENV === "production" ? "/cduabc" : ""
+
+const withBasePath = (path: string) => `${basePath}${path}`
 
 // Mock data for courses
 const courses = [
@@ -52,7 +56,7 @@ const courses = [
     { name: "Aprendizaje Automático No Supervisado", stage: "Terminal", semester: 8, pdf: "AprendizajeNoSupervisado.pdf" },
     { name: "Procesamiento de Lenguaje Natural", stage: "Terminal", semester: 8, pdf: "PLN.pdf" },
 
-    // Optativas (Mock)
+    // Optativas
     { name: "Deep Learning", stage: "Optativa", semester: 8, pdf: "DeepLearning.pdf" },
     { name: "Computación en la Nube", stage: "Optativa", semester: 8, pdf: "CloudComputing.pdf" },
     { name: "Bioinformática", stage: "Optativa", semester: 8, pdf: "Bioinformatica.pdf" },
@@ -66,7 +70,6 @@ const courses = [
     { name: "Métodos Numéricos II", stage: "Optativa", semester: 8, pdf: "MetodosNumericosII.pdf" },
     { name: "Introducción a los Procesos Estocásticos y Simulación", stage: "Optativa", semester: 8, pdf: "ProcesosEstocasticos.pdf" },
     { name: "Internet de las cosas", stage: "Optativa", semester: 8, pdf: "InternetCosas.pdf" },
-
 ]
 
 export default function PlanEstudiosPage() {
@@ -87,7 +90,7 @@ export default function PlanEstudiosPage() {
 
                     <div className="w-full h-[800px] mb-12 border rounded-lg overflow-hidden shadow-md bg-white">
                         <iframe
-                            src="/pdf/materias/MapaCurricular.pdf"
+                            src={withBasePath("/pdf/materias/MapaCurricular.pdf")}
                             className="w-full h-full"
                             title="Mapa Curricular - Guía de Materias"
                         />
@@ -117,11 +120,18 @@ export default function PlanEstudiosPage() {
                                             <Card key={index} className="hover:shadow-lg transition-shadow border-t-4 border-t-primary">
                                                 <CardHeader className="pb-2">
                                                     <div className="flex justify-between items-start">
-                                                        <Badge variant={
-                                                            course.stage === "Básica" ? "default" :
-                                                                course.stage === "Disciplinaria" ? "secondary" :
-                                                                    course.stage === "Terminal" ? "destructive" : "outline"
-                                                        } className="mb-2">
+                                                        <Badge
+                                                            variant={
+                                                                course.stage === "Básica"
+                                                                    ? "default"
+                                                                    : course.stage === "Disciplinaria"
+                                                                        ? "secondary"
+                                                                        : course.stage === "Terminal"
+                                                                            ? "destructive"
+                                                                            : "outline"
+                                                            }
+                                                            className="mb-2"
+                                                        >
                                                             {course.stage}
                                                         </Badge>
                                                         <span className="text-xs font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded">
@@ -134,7 +144,7 @@ export default function PlanEstudiosPage() {
                                                 </CardHeader>
                                                 <CardContent>
                                                     <a
-                                                        href={`/pdf/materias/${course.pdf}`}
+                                                        href={withBasePath(`/pdf/materias/${course.pdf}`)}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
                                                         className="flex items-center justify-center w-full py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors group"

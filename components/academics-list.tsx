@@ -16,7 +16,7 @@ export default function AcademicsList() {
       title: "Profesor Investigador Titular",
       department: "Ciencia de Datos",
       email: "luis.pellegrini@uabc.edu.mx",
-      photo: "/placeholder.svg?key=prof1",
+      photo: "/cduabc/placeholder.svg?key=prof1",
       bio: "Especialista en Vision y Lenguaje",
       profiles: {
         googleScholar: "https://scholar.google.com/citations?user=mRWayw0AAAAJ&hl=es&oi=ao",
@@ -31,7 +31,7 @@ export default function AcademicsList() {
       title: "Profesor Titular",
       department: "Ciencia de Datos",
       email: "rcasillas@uabc.edu.mx",
-      photo: "/placeholder.svg?key=prof2",
+      photo: "/cduabc/placeholder.svg?key=prof2",
       bio: "Interacción humano computadora",
       profiles: {
         googleScholar: "https://scholar.google.com/citations?user=pUiGvyUAAAAJ&hl=es&oi=ao",
@@ -61,7 +61,7 @@ export default function AcademicsList() {
       title: "Profesor Investigador CICESE",
       department: "Ciencias Computacionales",
       email: "irvin.lopez.navas@uabc.edu.mx",
-      photo: "/placeholder.svg?key=prof4",
+      photo: "/cduabc/placeholder.svg?key=prof4",
       bio: "Ciencia de Datos y Aprendizaje Automático",
       profiles: {
         googleScholar: "https://scholar.google.com/citations?user=_o-o254AAAAJ&hl=es&oi=sra",
@@ -77,7 +77,7 @@ export default function AcademicsList() {
       title: "Profesora Investigadora",
       department: "Análisis de Datos",
       email: "X@uabc.edu.mx",
-      photo: "/placeholder.svg?key=prof4",
+      photo: "/cduabc/placeholder.svg?key=prof4",
       bio: "Investigadora en minería de datos y análisis de redes complejas.",
       profiles: {
         googleScholar: "https://scholar.google.com/citations?user=_o-o254AAAAJ&hl=es&oi=sra",
@@ -93,7 +93,7 @@ export default function AcademicsList() {
       title: "Profesor de Asignatura",
       department: "Ciencia de Datos",
       email: "julio.duran@uabc.edu.mx",
-      photo: "/placeholder.svg?key=prof3",
+      photo: "/cduabc/placeholder.svg?key=prof3",
       bio: "Matemáticas discretas",
       profiles: {
         googleScholar: "https://scholar.google.com/citations?user=XOnxqzYAAAAJ&hl=es",
@@ -108,7 +108,7 @@ export default function AcademicsList() {
       title: "Profesor de Asignatura",
       department: "Matemáticas",
       email: "julio.duran@uabc.edu.mx",
-      photo: "/placeholder.svg?key=prof3",
+      photo: "/cduabc/placeholder.svg?key=prof3",
       bio: "Matemáticas discretas",
       profiles: {
         googleScholar: "https://scholar.google.com/citations?user=XOnxqzYAAAAJ&hl=es",
