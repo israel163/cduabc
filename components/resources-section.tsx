@@ -16,7 +16,7 @@ export default function ResourcesSection() {
       category: "libros",
       authors: "James, Witten, Hastie, Tibshirani",
       description: "Libro fundamental sobre machine learning e introducción a la estadística con aplicaciones en R.",
-      link: "#",
+      link: "https://www.amazon.com.mx/Introduction-Statistical-Learning-Applications/dp/1461471370",
       icon: BookOpen,
     },
     {
@@ -26,7 +26,7 @@ export default function ResourcesSection() {
       category: "libros",
       authors: "Wes McKinney",
       description: "Guía completa sobre manipulación, limpieza y análisis de datos con Python.",
-      link: "#",
+      link: "https://www.amazon.com.mx/Python-para-an%C3%A1lisis-datos-McKinney/dp/8441546835",
       icon: BookOpen,
     },
     {
@@ -36,17 +36,17 @@ export default function ResourcesSection() {
       category: "cursos",
       authors: "Andrew Ng - Coursera",
       description: "Especialización en profundidad sobre redes neuronales y aprendizaje profundo.",
-      link: "#",
+      link: "https://www.coursera.org/specializations/deep-learning?utm_medium=sem&utm_source=gg&utm_campaign=b2c_latam_deep-learning_deeplearning-ai_ftcof_specializations_cx_dr_bau_gg_sem_pr_mx_es_m_hyb_26-03_x&campaignid=23652248767&adgroupid=199841759971&device=c&keyword=coursera%20deep%20learning%20andrew%20ng&matchtype=p&network=g&devicemodel=&creativeid=799957543138&assetgroupid=&targetid=kwd-1662013125043&extensionid=&placement=&gad_source=1&gad_campaignid=23652248767&gbraid=0AAAAADdKX6Z-B73te7vzH1ExNH8ghiISU&gclid=Cj0KCQjw9-PNBhDfARIsABHN6-0qI_mPDG4QN_N5ty91alns0gx98OefWH4NqDu_-HE_wYCM5JcY7rMaAm43EALw_wcB",
       icon: Brain,
     },
     {
       id: 4,
-      title: "SQL para Análisis de Datos",
-      type: "Tutorial",
-      category: "tutoriales",
-      authors: "Equipo de Capacitación",
+      title: "SQL para Ciencia de Datos",
+      type: "Curso Online",
+      category: "cursos",
+      authors: "Don Noxon - Coursera",
       description: "Guía práctica sobre consultas SQL optimizadas para análisis de datos.",
-      link: "#",
+      link: "https://www.coursera.org/specializations/learn-sql-basics-data-science?utm_medium=sem&utm_source=gg&utm_campaign=b2c_latam_learn-sql-basics-data-science_ucdavis_ftcof_specializations_cx_dr_bau_gg_sem_pr_mx_es_m_hyb_26-03_x&campaignid=23648412614&adgroupid=194248954236&device=c&keyword=sql&matchtype=p&network=g&devicemodel=&creativeid=799996517683&assetgroupid=&targetid=kwd-31722291&extensionid=&placement=&gad_source=1&gad_campaignid=23648412614&gbraid=0AAAAADdKX6YbpdUv8709gqGtOOYrUGOs5&gclid=Cj0KCQjw9-PNBhDfARIsABHN6-0U3BeErLjWgWFp2aEImviIyIQB7Zm9KYnhpYXG8xzcngQddGCJVd8aAgVlEALw_wcB",
       icon: Database,
     },
     {
@@ -56,7 +56,7 @@ export default function ResourcesSection() {
       category: "herramientas",
       authors: "Comunidad Pandas",
       description: "Referencia oficial de la librería Pandas para manipulación de datos en Python.",
-      link: "#",
+      link: "https://pandas.pydata.org/",
       icon: Code,
     },
     {
@@ -66,7 +66,7 @@ export default function ResourcesSection() {
       category: "herramientas",
       authors: "Comunidad Scikit-learn",
       description: "Guía completa de la librería Scikit-learn para machine learning en Python.",
-      link: "#",
+      link: "https://scikit-learn.org/stable/",
       icon: Code,
     },
     {
@@ -74,9 +74,9 @@ export default function ResourcesSection() {
       title: "Visualización de Datos con Matplotlib",
       type: "Tutorial",
       category: "tutoriales",
-      authors: "Equipo de Capacitación",
+      authors: "Carlos Alarcón",
       description: "Técnicas de visualización avanzadas usando Matplotlib, Seaborn y Plotly.",
-      link: "#",
+      link: "https://deepnote.com/app/a_mas/Curso-de-Visualizacion-de-Datos-con-Matplotlib-y-Seaborn-a5cbcd22-59a5-4f17-af14-92866ad80a76",
       icon: BarChart3,
     },
     {
@@ -86,7 +86,7 @@ export default function ResourcesSection() {
       category: "libros",
       authors: "Frank E. Harrell Jr.",
       description: "Estrategias avanzadas de modelado de regresión con aplicaciones prácticas.",
-      link: "#",
+      link: "https://www.amazon.com/Regression-Modeling-Strategies-Applications-Statistics/dp/331933039X",
       icon: BookOpen,
     },
     {
@@ -96,7 +96,7 @@ export default function ResourcesSection() {
       category: "herramientas",
       authors: "Google - TensorFlow",
       description: "Tutoriales oficiales de TensorFlow para deep learning y IA.",
-      link: "#",
+      link: "https://www.tensorflow.org/?hl=es-419",
       icon: Layers,
     },
     {
@@ -106,7 +106,7 @@ export default function ResourcesSection() {
       category: "practica",
       authors: "Kaggle Community",
       description: "Competiciones de ciencia de datos para practicar y mejorar tus habilidades.",
-      link: "#",
+      link: "https://www.kaggle.com/competitions",
       icon: BarChart3,
     },
     {
@@ -116,17 +116,17 @@ export default function ResourcesSection() {
       category: "cursos",
       authors: "Equipo de Enseñanza",
       description: "Curso sobre métodos bayesianos con aplicaciones a problemas reales.",
-      link: "#",
+      link: "https://www.quantstart.com/articles/Bayesian-Statistics-A-Beginners-Guide/",
       icon: Brain,
     },
     {
       id: 12,
-      title: "Feature Engineering Handbook",
+      title: "The Art of Feature Engineering: Essentials for Machine Learning",
       type: "Libro",
       category: "libros",
-      authors: "Matthew Dancho & Davis Vaughan",
+      authors: "Pablo Duboue",
       description: "Guía práctica sobre ingeniería de características para mejorar modelos.",
-      link: "#",
+      link: "https://www.amazon.com/Art-Feature-Engineering-Essentials-Learning/dp/1108709389",
       icon: BookOpen,
     },
   ]
@@ -180,11 +180,10 @@ export default function ResourcesSection() {
             <button
               key={category.value}
               onClick={() => setSelectedCategory(category.value)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                selectedCategory === category.value
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-card border border-border text-foreground hover:border-primary"
-              }`}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === category.value
+                ? "bg-primary text-primary-foreground"
+                : "bg-card border border-border text-foreground hover:border-primary"
+                }`}
             >
               {category.label}
             </button>
@@ -259,7 +258,7 @@ export default function ResourcesSection() {
             <p className="text-foreground/70 text-sm leading-relaxed mb-4">
               Acceso a miles de libros, artículos científicos y revistas especializadas en ciencia de datos.
             </p>
-            <Link href="#" className="text-primary hover:underline font-medium text-sm">
+            <Link href="https://bibliotecas.uabc.mx/" className="text-primary hover:underline font-medium text-sm">
               Visitar Biblioteca →
             </Link>
           </div>
@@ -299,7 +298,7 @@ export default function ResourcesSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              href="mailto:recursos@universidad.edu"
+              href="mailto:lcd.fc@uabc.edu.mx"
               className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
             >
               Enviar Mensaje
